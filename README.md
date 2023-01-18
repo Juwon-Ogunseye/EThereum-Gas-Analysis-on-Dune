@@ -19,3 +19,4 @@ sum(eth_tx_used*price) over (order by date_trunc('minute',block_time) desc) as c
 /**hash**/
 from alltransaction as a
 left join (select minute,price from prices.usd where symbol='WETH') as prices on date_trunc('minute',block_time)=minute 
+/
